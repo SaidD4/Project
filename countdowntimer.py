@@ -22,7 +22,7 @@ class CountdownBase:
             raise ValueError("Seconds cannot be negative.")
         self._seconds = value
     
-    @staticmethod
+    @staticmethod #doesn't require an instance
     def time_delay(seconds):
         """Static method to introduce a delay."""
         time.sleep(seconds)
@@ -61,5 +61,6 @@ class CountdownTimer(CountdownBase):
         print(f"{colorization.RED}Time's up!{colorization.RESET}")
 
 if __name__ == "__main__":
-    timer = CountdownTimer(10)  # Change the value to set a different countdown time
+    number = int(input("Enter Number: "))
+    timer = CountdownTimer(number)  # Change the value to set a different countdown time
     timer.start_countdown()
